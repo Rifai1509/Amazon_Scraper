@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block body %}
+{% for x in area %}
+
+{{ x.find('div','a-section aok-relative s-image-fixed-height')|safe }}
+Name = <a href="{{ x.find('img')['href']|safe }}">{{x.find('img')['alt']}} </a> <br/>
+Price = {{ x.find('div','a-row a-size-base a-color-secondary').find('span','a-color-base')|safe }} <br/>
+
+{% endfor %}
+{% endblock %}
